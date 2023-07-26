@@ -23,7 +23,7 @@ class Post(models.Model):
 
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
 
-    created_at = models.DateTimeField(default= timezone.now())
+    created_at = models.DateTimeField(default= timezone.now)
 
     feature_image = models.ImageField(upload_to='Blog/Images', blank=True, null=True)
 
@@ -31,7 +31,21 @@ class Post(models.Model):
 
     description = models.TextField()
 
+    class Meta:
+        verbose_name = "Post"
+
+        verbose_name_plural = "Posts"
+
+    def __str__(self):
+
+        return self.title
 
 class Category(models.Model):
     category = models.CharField(max_length=100)
 
+    verbose_name = "Category"
+
+    verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.category
