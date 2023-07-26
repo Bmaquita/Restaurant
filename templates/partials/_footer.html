@@ -1,0 +1,87 @@
+{% load static %}
+<!--Footer-->
+<footer class="footer bg-dark spacer-one-top-md spacer-one-bottom-xs">
+    <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100">
+       <path d="M0 100 C40 0 60 0 100 100 Z"></path>
+    </svg>
+    <!--Container-->
+    <div class="container space-top-2 space-bottom-1">
+        <!--row-->
+        <div class="row justify-content-lg-start">
+            <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+                <a class="d-inline-block mb-3 footer-logo" href="index.html">
+                    <img src="{% static 'img/logo_transparent.png' %}" alt="" height=110 width=120>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <h3 class="h6 text-white mb-3  font-size-15">Address</h3>
+                <address>
+                <ul class="list-group list-group-flush list-group-borderless mb-0">
+                   <li class="list-group-item">+264 81 176 05175</li>
+                   <li class="list-group-item">
+                      <a href="mailto:social@bmaquita.com">social@bmaquita.com</a>
+                   </li>
+                   <li class="list-group-item">3805 Edwards Rd, Khomasdal, Windhoek</li>
+                </ul>
+             </address>
+            </div>
+            <div class=" col-lg-3 col-sm-6 mb-4">
+                <h3 class="h6 text-white mb-3  font-size-15">Hours of opening</h3>
+                <div class="opening-hours-container font-size-14 ">
+                    <span class="opening-hours-holder-inner">
+                <span class="opening-hours-day-holder">
+                <span class="opening-hours-day">Monday - Thursday </span>
+                    </span>
+                    <span class="opening-hours-line"></span>
+                    <span class="opening-hours-time">10:00 - 22:00</span>
+                    </span>
+                </div>
+
+                <div class="opening-hours-container font-size-14 ">
+                    <span class="opening-hours-holder-inner">
+                <span class="opening-hours-day-holder">
+                <span class="opening-hours-day">Friday - Saturday</span>
+                    </span>
+                    <span class="opening-hours-line"></span>
+                    <span class="opening-hours-time">09:00 - 02:30</span>
+                    </span>
+                </div>
+             
+                <div class="opening-hours-container font-size-14 ">
+                    <span class="opening-hours-holder-inner">
+                <span class="opening-hours-day-holder">
+                <span class="opening-hours-day">Sunday</span>
+                    </span>
+                    <span class="opening-hours-line"></span>
+                    <span class="opening-hours-time">Closed</span>
+                    </span>
+                </div>
+            </div>
+          
+        </div>
+        <!--End row-->
+        <!--row-->
+        <div class="row align-items-center">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon" href="#"><span style = "font-size:24px"class="fa fa-facebook-f"></span></a></li>
+                    <li class="list-inline-item mr-1"><a class="social-icon " href="#"><span style = "font-size:24px" class="fa fa-linkedin"></span></a></li>
+                    <li class="list-inline-item"><a class="social-icon " href="#"><span  style = "font-size:24px" class="fa fa-instagram"></span></a></li>
+                    <li class="list-inline-item"><a class="social-icon " href="#"><span style = "font-size:24px" class="fa fa-whatsapp"></span></a></li>
+
+                </ul>
+            </div>
+         
+            <div class="col-sm-4 text-sm-right">
+                <p class="small  text-secondary  mb-0">&copy; {% now 'Y' %} Bmaquita. All rights reserved.</p>
+
+            </div>
+        </div>
+        <!--End row-->
+    </div>
+    <!--End container-->
+</footer>
+<!--End footer-->
+<!--To the top-->
+<a class="scroll-to-top scroll" href="#wrapper"><span class=" fa fa-arrow-up top-icon "></span></a>
+<!-- End to the top -->

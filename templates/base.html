@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <title>BRestaurant {% block title %} {% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css -->
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/bootstrap-dropdownhover.min.css">
+    <link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Lustria" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+
+    <!-- Preloader -->
+    <div class="loader">
+        <!-- Preloader inner -->
+        <div class="loader-inner">
+            <svg width="120" height="220" viewbox="0 0 100 100" class="loading-spinner" version="1.1" xmlns="http://www.w3.org/2000/svg">
+               <circle class="spinner" cx="50" cy="50" r="21" fill="#ffffff" stroke-width="3"/>
+            </svg>
+        </div>
+        <!-- End preloader inner -->
+    </div>
+    <!-- End preloader-->
+
+    <div class="wrapper">
+
+        {% include 'partials/_header.html'%} {% block content %} {% endblock %} {% include 'partials/_footer.html'%}
+
+
+
+    </div>
+
+
+    <!--Javascript-->
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-dropdownhover.min.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <script src="{% static 'js/smooth-scroll.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/instafeed.min.js' %}"></script>
+    <script src="{% static 'js/placeholders.min.js'%}"></script>
+    <script src="{% static 'js/jarallax.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Google analytics -->
+    <!-- End google analytics -->
+</body>
+
+</html>

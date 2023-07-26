@@ -1,0 +1,51 @@
+{% load static %}
+
+<header class="header default">
+    <div class="header-section">
+        <!--Container-->
+        <div class="container-fluid ">
+            <nav class="navbar navbar-expand-lg header-navbar ">
+                <a class=" navbar-brand navbar-logo scroll" href="#wrapper">
+                    <img class="mb-0 logo-light" src="{% static 'img/logo_transparent.png'%}" height=60 width=70 alt="Restaurant Logo">
+                    <img class="mb-0 logo-dark" src="{% static 'img/logo_transparent.png'%}" height=60 width=70  alt="Restaurant Logo">
+                </a>
+                <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+            </button>
+                <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
+                    <ul class=" navbar-nav  header-navbar-nav">
+                        <li><a class=" nav-link scroll" href="#wrapper">Home</a></li>
+                        <li><a class=" nav-link scroll" href="#about">Resto</a></li>
+                        <li><a class=" nav-link scroll" href="#special">Special</a></li>
+                        <li><a class=" nav-link scroll" href="#menu">Menu</a></li>
+                        <li><a class=" nav-link scroll" href="#gallery">Gallery</a></li>
+                        <li><a class=" nav-link scroll" href="#news">News</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                     Pages<span class="dropdown-arrow ml-2">
+                     </span>
+                     </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog-full.html">Blog</a></li>
+                                <li><a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a></li>
+                                <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                <li><a class="dropdown-item" href="reservation.html">Reservation</a></li>
+                                <li><a class="dropdown-item" href="menu-detailed.html">Menu Detailed</a></li>
+                                <li><a class="dropdown-item" href="gallery.html">Look Book</a></li>
+                            </ul>
+                        </li>
+                        <li class="ml-lg-auto">
+                            <a class=" nav-link nav-divider scroll" href="#reservation">
+                                <img src="{% static 'svg/ring-bell-light.svg'%}" alt="" class="max-width-xsm bell-light">
+                                <img src="{% static 'svg/ring-bell-dark.svg' %}" alt="" class="max-width-xsm bell-dark"></a>
+                        </li>
+                        <li><a class=" nav-link pr-0 pb-sm-4 pb-sm-0" href="index.html"><span class="fa fa-phone mr-3"></span>+264 81 176 05175</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--End container-->
+    </div>
+</header>
+<!--End header-->

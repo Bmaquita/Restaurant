@@ -23,7 +23,7 @@ class Post(models.Model):
 
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
 
-    created_at = models.DateTimeField(default= timezone.now(),auto_now_add=True)
+    created_at = models.DateTimeField(default= timezone.now())
 
     feature_image = models.ImageField(upload_to='Blog/Images', blank=True, null=True)
 
