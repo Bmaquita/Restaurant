@@ -115,6 +115,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'restaurant/static')
 ]
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'restaurant/static')
+
 
 
 MEDIA_URL = 'media/'
