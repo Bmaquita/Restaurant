@@ -1,18 +1,13 @@
-from django import forms 
+from django import forms
 
-class Reservation(forms.Form):
-    
-    name = forms.CharField(max_length=100)
+from .models import Reservation
 
-    email = forms.EmailField(required=False)
 
-    phone = forms.CharField(max_length=16)
+class Reservation(forms.ModelForm):
 
-    person = forms.IntegerField()
+    model = Reservation
+    fields = "__all__"
 
-    date = forms.DateField()
-
-    time = forms.TimeField()
 
 
 class Contact(forms.Form):
