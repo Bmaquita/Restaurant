@@ -109,7 +109,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'retaurant/static')
+    os.path.join(BASE_DIR, 'restaurant/static')
 ]
 
 
