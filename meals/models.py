@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 #meals models 
 
 class Meal(models.Model):
@@ -32,8 +31,6 @@ class Meal(models.Model):
     def __str__(self):
 
         return self.name 
-
-
 
 #category class
 
