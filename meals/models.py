@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+from django.utils.text import slugify 
 #meals models 
 
 class Meal(models.Model):
@@ -18,7 +18,7 @@ class Meal(models.Model):
 
     feature_image = models.ImageField(upload_to='Meals/Feature-Image')
 
-    slug = models.SlugField()
+    slug = models.SlugField(null=True, unique=True)
 
     description = models.TextField()
 
@@ -30,7 +30,15 @@ class Meal(models.Model):
     
     def __str__(self):
 
-        return self.name 
+        return self.name
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug and self.name:
+
+            self.slug = slugify(self.name)
+
+        super(Meal, self).save(*args, **kwargs) 
 
 #category class
 

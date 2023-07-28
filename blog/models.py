@@ -1,6 +1,8 @@
 from django.db import models
 
 
+from django.utils.text import slugify 
+
 # Create your models here
 from django.utils import timezone
 
@@ -31,6 +33,8 @@ class Post(models.Model):
 
     description = models.TextField()
 
+    slug = models.SlugField(null=True, unique=True)
+
     class Meta:
         verbose_name = "Post"
 
@@ -39,6 +43,15 @@ class Post(models.Model):
     def __str__(self):
 
         return self.title
+    
+    #creating the slug for a post by overriding the save method 
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug and self.title:
+            self.slug = slugify(self.title)
+
+            super(Post, self).save(*args, **kwargs)
 
 class Category(models.Model):
     category = models.CharField(max_length=100)
