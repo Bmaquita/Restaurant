@@ -49,13 +49,11 @@ class Testimonials(models.Model):
 
     def __str__(self):
 
-        return self.title
+        return self.author
 
 class Gallery(models.Model):
-    imageOne = models.ImageField(upload_to='home/gallery')
-    imageTwo = models.ImageField(upload_to='home/gallery')
-    imageThree = models.ImageField(upload_to='home/gallery')
-    imageFour = models.ImageField(upload_to='home/gallery')
+    image = models.ImageField(upload_to='home/gallery')
+
 
     class Meta:
         verbose_name = verbose_name_plural = 'Gallery'
@@ -63,7 +61,7 @@ class Gallery(models.Model):
 
     def __str__(self):
 
-        return str(self.imageOne)
+        return str(self.image)
 
 
 class Services(models.Model):
