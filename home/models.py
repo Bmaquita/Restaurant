@@ -27,6 +27,10 @@ class OurStory(models.Model):
     imageThree = models.ImageField(upload_to='home/our-story')
     imageFour = models.ImageField(upload_to='home/our-story')
 
+    chefName = models.CharField(max_length=100, null=True)
+    chefTitle = models.CharField(max_length=100, null=True, blank=True)
+    chef_image = models.ImageField(upload_to='home/Chef', null=True, blank=True)
+
     class Meta:
         verbose_name = verbose_name_plural = 'Our Story'
 

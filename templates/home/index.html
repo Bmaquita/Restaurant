@@ -9,20 +9,98 @@
 
 <!--Main slider-->
 <div class="main-slider slider flexslider">
+
+    {% if sliders %}
     <ul class="slides">
-        <li>
-            <div class="background-img gradient-overlay gradient-overlay-dark">
-                <img src="assets/img/1.jpg" alt="">
-            </div>
-        </li>
-        
-        <li>
-            <div class="background-img gradient-overlay gradient-overlay-dark">
-                <img src="assets/img/2.jpg" alt="">
-            </div>
-        </li>
+       {% for slider in sliders %}
+       <li>
+        <div class="background-img gradient-overlay gradient-overlay-dark">
+            <img src="{{ slider.slider.url }}" alt="">
+        </div>
+    </li>
+       {% endfor %}
     </ul>
+
+    {% endif %}
 </div>
 <!--End main slider-->
 
+
+ <!--About section-->
+ <section id="about" class="spacer-double-lg">
+    <!--Container-->
+    {% if about %}
+    <div class="container">
+        <!--row-->
+        <div class="row justify-content-between align-items-center">
+            {% for content in about%}
+            <div class="col-lg-5 mb-6 mb-lg-0">
+                <span class="label-title mb-3">Our Story</span>
+                <h2 class="h3 font-alt mb-3">{{ conetnt.title }}</h2>
+                <p>{{ content.description }}</p>
+                <div class="media align-items-center">
+                    <img class="avatar-md rounded-circle mr-3" src="{{ content.chef_image.url }}" alt="">
+                    <div class="media-body">
+                        <h4 class="h6  mb-0">{{ content.chefName }}</h4>
+                        <p class="mb-0">{{ content.chefTitle}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <div class="row card-gutters">
+                        <div class="col-sm-6 offset-sm-1 mb-2">
+                            <a class="hover-effect  popup-image" href="{{ content.imageOne.url }}">
+                                <img class="img-fluid w-100" src="{{ content.imageOne.url }}" alt="">
+                                <span class="hover-effect-container">
+                      <span class="hover-effect-icon">
+                      <span class="fa fa-plus hover-effect-icon-inner"></span>
+                                </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 align-self-end mb-2">
+                            <a class="hover-effect  popup-image" href="{{ content.imageTwo.url }}">
+                                <img class="img-fluid w-100" src="{{ content.imageTwo.url }}" alt="">
+                                <span class="hover-effect-container">
+                      <span class="hover-effect-icon">
+                      <span class="fa fa-plus hover-effect-icon-inner"></span>
+                                </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 mb-2">
+                            <a class="hover-effect  popup-image" href="{{ content.imageThree.url }}">
+                                <img class="img-fluid w-100" src="{{ content.imageThree.url }}" alt="">
+                                <span class="hover-effect-container">
+                      <span class="hover-effect-icon">
+                      <span class="fa fa-plus hover-effect-icon-inner"></span>
+                                </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <a class="hover-effect  popup-image" href="{{ content.imageFour.url  }}">
+                                <img class="img-fluid w-100" src="{{ content.imageFour.url }}" alt="">
+                                <span class="hover-effect-container">
+                      <span class="hover-effect-icon">
+                      <span class="fa fa-plus hover-effect-icon-inner"></span>
+                                </span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        <!--End row-->
+    </div>
+    {% endif %}
+    <!--End container-->
+</section>
+<!--End about section-->
 {% endblock %}
