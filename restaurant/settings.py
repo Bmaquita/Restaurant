@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'meals',
     'home', 
     'blog',
-    'contact'
+    'contact',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

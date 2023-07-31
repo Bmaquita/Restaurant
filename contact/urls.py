@@ -1,1 +1,9 @@
-from django.urls import path 
+# reservation/urls.py
+from django.urls import path
+
+from . import views 
+
+
+urlpatterns = [
+    path('reservation/', views.reservation, name = 'reservation'),
+]

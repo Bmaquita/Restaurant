@@ -1,0 +1,43 @@
+{% load widget_tweaks %}
+<form method="POST" action="{% url 'reservation' %}">
+   {% csrf_token %}
+
+   <div class="row">
+      <div class="col">
+         {% render_field reservation_form.name placeholder="Your Name" class+="form-control mb-4" %}
+      </div>
+
+      <div class="col">
+         {% render_field reservation_form.email placeholder="Your Email" class+="form-control mb-4" %}
+       </div>
+
+   </div>
+
+   <div class="row">
+      <div class="col">
+         {% render_field reservation_form.phone placeholder="Your Phone" class+="form-control mb-4" %}
+      </div>
+      <div class="col">
+         {% render_field reservation_form.person placeholder="Number of Persons" class+="form-control mb-4" min=1 max=10 %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+         {% render_field reservation_form.date placeholder="Reservation Date" class+="form-control mb-4" %}
+      </div>
+      <div class="col">
+         {% render_field  reservation_form.time placeholder="Reservation Time" class+="form-control mb-4" %}
+      </div>
+    </div>
+
+
+   <div class="row">
+    
+     <div class="col">
+        <div class="text-center">
+           <button type="submit" style = "background:#B5A46D;color:#fff"class="btn btn-wide  ">Book a table</button>
+        </div>
+     </div>
+  </div>
+</form>

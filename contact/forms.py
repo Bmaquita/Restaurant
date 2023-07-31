@@ -5,17 +5,14 @@ from .models import Reservation
 
 class Reservation(forms.ModelForm):
 
-    model = Reservation
-    fields = "__all__"
+    class Meta:
+        model = Reservation
 
+        #importing all field the reservation model
+        fields = "__all__"
 
+        widgets = {
+            'date':forms.DateInput(attrs={'type':'date'}),
+            'time':forms.TimeInput(attrs={'type':'time'})
 
-class Contact(forms.Form):
-
-    name = forms.CharField(max_length=100)
-
-    email = forms.EmailField(required=False)
-
-    phone = forms.CharField(max_length=16)
-
-    message = forms.Textarea()
+        }

@@ -104,6 +104,36 @@
 </section>
 <!--End about section-->
 
+        <!--Short reservation section-->
+        <section class="no-gutters">
+            <!--Container-->
+            <div class="container-fluid">
+                <!--row-->
+                <div class="row ">
+                    <div class="col-lg-6 bg-secondary ">
+                        <div class="reservation-card p-4 h-100">
+                            <div class="reservation-card-container p-6">
+                                <div class="reservation-card-inner p-sm-6">
+                                    <img src="{% static 'svg/serving-dish.svg' %}" alt="" class="max-width-lg mb-3">
+                                    <h1 class="h2 font-alt">Make a Reservation</h1>
+                                    <p class="lead">Opens 8:00 AM - 10:00 PM, every day of the week </p>
+                                    <a href="#reservation" class="btn btn-dark btn-primary btn-wide scroll">Book a table</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="pl-lg-2">
+                            <img src="{% static 'img/reservation.jpg'%}" alt="Reservation" width=100% height=100%>
+                        </div>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </section>
+        <!--End short reservation section-->
+        
   
         <!--Review section-->
         <section class="spacer-lg jarallax gradient-overlay gradient-overlay-dark">
@@ -230,4 +260,36 @@
             <!--End container-->
         </section>
         <!--End services section-->
+<!--Reservation section-->
+<section id="reservation" class="spacer-lg">
+    <div class="background-img ">
+       <img src="{% static 'img/5.jpg'%}" alt="">
+    </div>
+    <!--Container-->
+    <div class="container">
+       <!--row-->
+       <div class="row ">
+          <div class="col-lg-8 bg-white">
+             <div class="p-5 p-sm-5">
+                <div class="mb-5 pb-5 text-left">
+                   <span class="label-title mb-3">Reservation</span>
+                   <h1 class="h2 font-alt">Book a Table</h1>
+                   <p class="w-md-75 mb-0 lead">Please choose your reservation date with specific time and number of people to book a table </p>
+                </div>
+                {% include 'reservation/reservation.html' %}
+             </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block">
+             <div class="background-img">
+                <img src="{% static 'img/reservation.jpg'%}" alt="">
+             </div>
+          </div>
+       </div>
+       <!--End row-->
+    </div>
+    <!--End container-->
+ </section>
+ <!--End booking section-->
+<!--End booking section-->
+
 {% endblock %}
