@@ -1,4 +1,6 @@
 {% load widget_tweaks %}
+
+{% comment "widget_twaeks" %} The load widget_tweaks allows us to style our form inputs - the classes depends on the css framework being used {% endcomment %}
 <form method="POST" action="{% url 'reservation' %}">
    {% csrf_token %}
 

@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
+# After installing the widget_tweaks, we have to place it also here on the installed apps 
+#this wwidget is used to style the form input. it can be installed using pip install django-widgets-tweaks
+# then on the templates {% load widgets_tweaks %}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

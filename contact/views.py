@@ -3,10 +3,6 @@ from django.shortcuts import render, redirect
 from .forms import Reservation
 
 # Create your views here.
-
-
-from contact.forms import Reservation
-
 def reservation(request):
 
     reservation_form = Reservation()

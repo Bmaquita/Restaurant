@@ -276,7 +276,11 @@
                    <h1 class="h2 font-alt">Book a Table</h1>
                    <p class="w-md-75 mb-0 lead">Please choose your reservation date with specific time and number of people to book a table </p>
                 </div>
+                {% comment "including the reservation form" %} This from is being hadled on the reservation app.{% endcomment %}
+                
                 {% include 'reservation/reservation.html' %}
+
+
              </div>
           </div>
           <div class="col-lg-4 d-none d-lg-block">
