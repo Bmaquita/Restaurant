@@ -17,11 +17,11 @@
                 <h3 class="h6 text-white mb-3  font-size-15">Address</h3>
                 <address>
                 <ul class="list-group list-group-flush list-group-borderless mb-0">
-                   <li class="list-group-item">+264 81 176 05175</li>
+                   <li class="list-group-item">{{ contact_details.phone_number }}</li>
                    <li class="list-group-item">
-                      <a href="mailto:social@bmaquita.com">social@bmaquita.com</a>
+                      <a href="mailto:{{ contact_details.email }}">{{ contact_details.email }}</a>
                    </li>
-                   <li class="list-group-item">3805 Edwards Rd, Khomasdal, Windhoek</li>
+                   <li class="list-group-item">{{ contact_details.address }}</li>
                 </ul>
              </address>
             </div>
@@ -64,10 +64,26 @@
         <div class="row align-items-center">
             <div class="col-sm-4 mb-3 mb-sm-0">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon" href="#"><span style = "font-size:24px"class="fa fa-facebook-f"></span></a></li>
-                    <li class="list-inline-item mr-1"><a class="social-icon " href="#"><span style = "font-size:24px" class="fa fa-linkedin"></span></a></li>
-                    <li class="list-inline-item"><a class="social-icon " href="#"><span  style = "font-size:24px" class="fa fa-instagram"></span></a></li>
-                    <li class="list-inline-item"><a class="social-icon " href="#"><span style = "font-size:24px" class="fa fa-whatsapp"></span></a></li>
+                    {% if contact_details.facebook_link %}
+                        <li class="list-inline-item mb-2 mb-lg-0 mr-1"><a class="social-icon" href="{{ contact_details.facebook_link }}"><span style = "font-size:24px"class="fa fa-facebook-f"></span></a></li>
+                    {% endif %}
+                    
+                    {% if contact_details.linkedin_link %}
+                        <li class="list-inline-item mr-1"><a class="social-icon " href="{{ contact_details.linkedin_link }}"><span style = "font-size:24px" class="fa fa-linkedin"></span></a></li>
+                    {% endif %}
+
+                    {% if contact_details.instagram_link %}
+                        <li class="list-inline-item"><a class="social-icon " href="{{ contact_details.linkedin_link }}"><span  style = "font-size:24px" class="fa fa-instagram"></span></a></li>
+                    {% endif %}
+
+                    {% if contact_details.phone_number %}
+                        <li class="list-inline-item"><a class="social-icon " href="https://wa.me/{{ contact_details.phone_number }}"><span style = "font-size:24px" class="fa fa-whatsapp"></span></a></li>
+                    {% endif %}
+
+                    {% if contact_details.twitter_link %}
+                        <li class="list-inline-item"><a class="social-icon " href="{{ contact_details.twitter_link }}"><span style = "font-size:24px" class="fa fa-twitter"></span></a></li>
+                    {% endif %}
+
 
                 </ul>
             </div>

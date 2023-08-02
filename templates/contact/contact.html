@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block title %} - Contact Us {% endblock %}
+
+{% block content %}
+<!--Hero section-->
+<section class="hero jarallax gradient-overlay gradient-overlay-dark">
+    <img class="jarallax-img" src="{% static 'img/contact-us.jpg'%}" alt="">
+    <!--Container-->
+    <div class="container">
+       <!--Row-->
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class=" text-center">
+               <h1 class=" font-alt text-white">Do you have a question ?</h1>
+                <p class="w-md-40 mb-0 mx-auto lead text-light">Feel free to reach us we'd love to talk.</p>
+             </div>
+          </div>
+       </div>
+       <!--End row-->
+    </div>
+    <!--End container-->
+    <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100">
+       <path d="M0 100 C40 0 60 0 100 100 Z"></path>
+    </svg>
+ </section>
+ <!--End hero section-->
+
+   <!--Contact info section-->
+   <section  class=" spacer-one-bottom-md spacer-one-top-sm">
+    <!--Container-->
+    <div class="container-fluid">
+       <!--row-->
+       <div class="row no-gutters">
+          <div class="col-sm-6 col-lg-3 vertical-divider">
+             <div class="text-center py-5">
+                <img class="max-width-sm mb-3" src="{% static 'svg/address.svg' %}" alt="">
+                <h2 class="h6 mb-0">Address</h2>
+                <p class="mb-0">{{ contact_details.address }}</p>
+             </div>
+          </div>
+          <div class="col-sm-6 col-lg-3 vertical-divider">
+             <div class="text-center py-5">
+                <img class="max-width-sm mb-3" src="{% static 'svg/phone.svg' %}" alt="">
+                <h3 class="h6 mb-0">Phone Number</h3>
+                <p class="mb-0">{{contact_details.phone_number }}</p>
+             </div>
+          </div>
+          <div class="col-sm-6 col-lg-3 vertical-divider">
+             <div class="text-center py-5">
+                <img class="max-width-sm mb-3" src="{% static 'svg/fax.svg' %}" alt="">
+                <h3 class="h6 mb-0">Fax</h3>
+                <p class="mb-0">{{ contact_details.fax }}</p>
+             </div>
+          </div>
+          <div class="col-sm-6 col-lg-3  ">
+             <div class="text-center py-5">
+                <img class="max-width-sm mb-3" src="{% static 'svg/email.svg' %}" alt="">
+                <h3 class="h6 mb-0">Email</h3>
+                <p class="mb-0">{{ contact_details.email }}</p>
+             </div>
+          </div>
+       </div>
+       <!--End row-->
+    </div>
+    <!--End container-->
+ </section>
+ <!--End contact info section-->
+ <!--End contact info section-->
+         <hr class="my-0">
+         <!--Contact form serction-->
+<section style="padding-top:1rem;padding-bottom:6rem;">
+            <!--Container-->
+            <div class="container">
+               <!--Row-->
+               <div class="row justify-content-center">
+                  <div class="col">
+                     <div class="mb-5 pb-5 text-center">
+                        <span class="label-title mb-3">Contact us</span>
+                        <h1 class="h2 font-alt">Get in touch</h1>
+                        <p class="w-md-40 mb-0 mx-auto lead">For more info or inquiry about our restaurant, please feel free to get in touch with us.</p>
+                     </div>
+                  </div>
+               </div>
+               <!--End row-->
+            </div>
+            <!--End container-->
+            <!--Container-->
+            <div class="container ">
+               <!--Row-->
+               <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                     <form method="POST">
+
+                        {% csrf_token %}
+                        <div class="row">
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your name
+                              <span class="text-danger-alt">*</span>
+                              </label>
+                              <div class=" input-group form">
+                                 {% render_field contact_form.name placeholder="Your name" class+="form-control" %}
+                              </div>
+                           </div>
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your email
+                              <span class="text-danger-alt">*</span>
+                              </label>
+                              <div class=" input-group form">
+                                 {% render_field contact_form.email placeholder="Your email" class+="form-control" %}
+                              </div>
+                           </div>
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your subject
+                              </label>
+                              <div class=" input-group form">
+                                {% render_field  contact_form.subject placeholder="Subject" class+="form-control" %}
+                              </div>
+                           </div>
+                           <div class="col-sm-6 mb-5">
+                              <label class="form-label">
+                              Your phone
+                              </label>
+                              <div class="input-group form">
+
+                                {% render_field contact_form.phone placeholder="Phone" class+="form-control" %}
+
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <label class="form-label">
+                              Your message
+                              <span class="text-danger-alt">*</span>
+                              </label>
+                              <div class=" input-group form mb-5">
+                                {% render_field contact_form.message placeholder="Type your message" class+="form-control"%}
+                              </div>
+                           </div>
+                           <div class="col">
+                              <div class="text-center">
+                                 <button type="submit" class="btn btn-primary btn-wide">Send Message</button>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <!--End row-->
+            </div>
+            <!--End container-->
+         </section>
+         <!--End contact form section-->
+
+
+{% endblock %}

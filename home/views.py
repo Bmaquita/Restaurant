@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 
 from .models import Sliders, OurStory, Testimonials, Gallery, Services
 
+from contact.models import ContactDetail
+
 #import forms for reservation models 
 
 
@@ -26,6 +28,8 @@ def index(request):
 
     services = Services.objects.all()
 
+    contact_details = ContactDetail.objects.first()
+
 
     context = {
         'reservation_form':reservation_form,
@@ -34,6 +38,7 @@ def index(request):
         'testimonials':testimonials,
         'gallery':gallery, 
         'services':services,
+        'contact_details':contact_details
     }
     
     return render(request,'home/index.html', context)

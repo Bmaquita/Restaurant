@@ -3,6 +3,18 @@ from django import forms
 from .models import Reservation
 
 
+class ContactForm(forms.Form):
+    
+    name = forms.CharField(required=True)
+
+    email = forms.EmailField(required=True)
+
+    subject = forms.CharField(max_length=100)
+
+    phone = forms.CharField(required=False, max_length=18)
+
+    message = forms.CharField(widget=forms.Textarea)
+
 class Reservation(forms.ModelForm):
 
     class Meta:
