@@ -14,33 +14,20 @@
             </button>
                 <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end py-0 ">
                     <ul class=" navbar-nav  header-navbar-nav">
-                        <li><a class=" nav-link scroll" href="#wrapper">Home</a></li>
-                        <li><a class=" nav-link scroll" href="#about">Resto</a></li>
-                        <li><a class=" nav-link scroll" href="#special">Special</a></li>
-                        <li><a class=" nav-link scroll" href="#menu">Menu</a></li>
+                        <li><a class=" nav-link scroll" href="{% url 'index' %}">Home</a></li>
+                        <li><a class=" nav-link scroll" href="{% url 'index'%}#about">About Us</a></li>
+                        <li><a class=" nav-link scroll" href="{% url 'index'%}#special">Specials</a></li>
+                        <li><a class=" nav-link scroll" href="{% url 'meals_list' %}" target="_blank">Meals</a></li>
                         <li><a class=" nav-link scroll" href="#gallery">Gallery</a></li>
-                        <li><a class=" nav-link scroll" href="#news">News</a></li>
-                        <li class="dropdown">
-                            <a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     Pages<span class="dropdown-arrow ml-2">
-                     </span>
-                     </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="blog-full.html">Blog</a></li>
-                                <li><a class="dropdown-item" href="blog-sidebar.html">Blog Sidebar</a></li>
-                                <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-                                <li><a class="dropdown-item" href="reservation.html">Reservation</a></li>
-                                <li><a class="dropdown-item" href="menu-detailed.html">Menu Detailed</a></li>
-                                <li><a class="dropdown-item" href="gallery.html">Look Book</a></li>
-                            </ul>
-                        </li>
+                        <li><a class=" nav-link scroll" href="#news" target="_blank">News</a></li>
+                        <li><a class=" nav-link scroll" href="{% url 'contact' %}" target="_blank">Contact</a></li>
+
                         <li class="ml-lg-auto">
                             <a class=" nav-link nav-divider scroll" href="#reservation">
                                 <img src="{% static 'svg/ring-bell-light.svg'%}" alt="" class="max-width-xsm bell-light">
                                 <img src="{% static 'svg/ring-bell-dark.svg' %}" alt="" class="max-width-xsm bell-dark"></a>
                         </li>
-                        <li><a class=" nav-link pr-0 pb-sm-4 pb-sm-0" href="index.html"><span class="fa fa-phone mr-3"></span>{{ contact_details.phone_number }}</a></li>
+                        <li><a class=" nav-link pr-0 pb-sm-4 pb-sm-0" href="https://wa.me/{{ contact_details.phone_number}}" target="_blank"><span class="fa fa-phone mr-3"></span>{{ contact_details.phone_number }}</a></li>
                     </ul>
                 </div>
             </nav>

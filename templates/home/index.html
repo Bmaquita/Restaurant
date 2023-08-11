@@ -133,7 +133,9 @@
             <!--End container-->
         </section>
         <!--End short reservation section-->
+
         <!--Special section-->
+        {% if specials %}
         <section id="special"  class="spacer-double-lg">
             <!--Container-->
             <div class="container">
@@ -154,27 +156,31 @@
             <div class="container">
                <!--row-->
                <div class="row no-gutters text-center shadow-lg">
+                  {% for special in specials %}
                   <div class="col-12 col-lg-6 ">
                      <div class="special position-relative w-100 bg-white">
                         <div class="row no-gutters align-items-center">
                            <div class="col-12 col-md-6 d-flex">
                               <div class="special-inner position-relative w-100">
-                                 <h3 class="h5 font-weight-700 letter-spacing-small">Tomato Cheese Pasta</h3>
+                                 <h3 class="h5 font-weight-700 letter-spacing-small">{{ special.name }}</h3>
+                                 <h4 class =  "font-weight-500 letter-spacing-small"><span style="text-decoration:line-through" >{{ special.price}}$</span></h4>
+                                 <h4 class =  "font-weight-700 letter-spacing-small">{% if special.on_special_price %}{{ special.on_special_price}}$ {% endif %}</h4>
                                  <p>
-                                    Mango, Passion Fruit, Pineapple and Coconut All Blended with Ice.
+                                    {{ special.description }}
                                  </p>
-                                 <a href="#menu" class="font-size-11-5 text-uppercase font-weight-700 letter-spacing-medium scroll">view full menu</a>
+                                 <a href="{% url 'meals_list'%}" target = "_blank" class="font-size-11-5 text-uppercase font-weight-700 letter-spacing-medium scroll">view full menu</a>
                               </div>
                            </div>
                            <div class="col-12 col-md-6 align-self-md-stretch d-flex">
                               <figure class="special-media">
-                                 <img class="" src="assets/img/specials/1.jpg" alt="" >
+                                 <img class="" src="{{ special.feature_image.url }}" alt="" >
                               </figure>
                            </div>
                         </div>
                      </div>
          
                   </div>
+                  {% endfor %}
 
                </div>
                <!--End row-->
@@ -182,7 +188,8 @@
             <!--End container-->
          </section>
          <!--End specials section-->
-  
+
+         {% endif %}
         <!--Review section-->
         <section class="spacer-lg jarallax gradient-overlay gradient-overlay-dark">
             <img class="jarallax-img" src="{% static 'img/review.jpg'%}" alt="">

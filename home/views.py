@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from .models import Sliders, OurStory, Testimonials, Gallery, Services
 
 from contact.models import ContactDetail
 
-#import forms for reservation models 
+from meals.models import Meal
 
 
 #importing the reservation forms from reservation
@@ -15,9 +15,11 @@ from contact.forms import Reservation
 # Create your views here.
 def index(request):
 
-    #instance of reservation
+    #instance of reservation - contact app
     reservation_form = Reservation()
+    contact_details = ContactDetail.objects.first()
 
+    #instances of home app
     sliders = Sliders.objects.all()
 
     about =  OurStory.objects.all()
@@ -28,17 +30,23 @@ def index(request):
 
     services = Services.objects.all()
 
-    contact_details = ContactDetail.objects.first()
+    #instances of meals app
+    specials = Meal.objects.filter(on_special=True)
+
+
+
+    
 
 
     context = {
         'reservation_form':reservation_form,
+        'contact_details':contact_details,
         'sliders':sliders,
         'about':about,
         'testimonials':testimonials,
         'gallery':gallery, 
         'services':services,
-        'contact_details':contact_details
+        'specials':specials
     }
     
     return render(request,'home/index.html', context)
