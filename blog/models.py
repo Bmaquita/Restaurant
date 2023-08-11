@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
 
-    #hoice field
+    #choice field
     DRAFT = 'D'
     PUBLISHED = 'P'
 
@@ -43,15 +43,6 @@ class Post(models.Model):
     def __str__(self):
 
         return self.title
-    
-    #creating the slug for a post by overriding the save method 
-
-    def save(self, *args, **kwargs):
-
-        if not self.slug and self.title:
-            self.slug = slugify(self.title)
-
-            super(Post, self).save(*args, **kwargs)
 
 class Category(models.Model):
     category = models.CharField(max_length=100)
