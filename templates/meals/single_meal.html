@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ single_meal.category }} {% endblock %}
+
+{% block content %}
+<section class="spacer-xlg-alt jarallax gradient-overlay gradient-overlay-dark"  >
+    <img class="jarallax-img" src="{{ single_meal.feature_image.url }}" alt="">
+    <!--Container-->
+    <div class="container">
+       <!--Row-->
+       <div class="row justify-content-center">
+          <div class="col">
+             <div class=" text-center">
+                <h1 class="display-4 font-alt text-white mb-0">{{ single_meal.category }}</h1>
+             </div>
+          </div>
+       </div>
+       <!--End row-->
+    </div>
+    <!--End container-->
+    <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="100">
+       <path d="M0 100 C40 0 60 0 100 100 Z"></path>
+    </svg>
+ </section>
+ <!--End hero section-->
+ <!--Menu section-->
+ 
+ <section class="  spacer-one-bottom-lg spacer-one-top-md">
+    <!--Container-->
+    <div class="container">
+       <!--Row-->
+       <div class="row justify-content-around align-items-center">
+          <div class="col-md-8 col-lg-7 ">
+              
+                   <div class="media align-items-center mb-4 ">
+                      <img class="avatar-sm rounded-circle mr-3" src="{{ single_meal.feature_image.url }}" alt="">
+                      <div class="media-body position-relative">
+                         <h6 class="mb-0 position-relative  z-index-2 font-size-15"><span class="bg-white">{{ single_meal.name }}</span></h6>
+                         <span class="dots-price"></span>
+                         <span class="menu-price mb-0 h6">{{ single_meal.price }}$</span>
+                         <p class="mb-0 font-size-14">{{ single_meal.description }}</p>
+                      </div>
+                   </div>
+
+                 
+                </div>
+                
+       </div>
+       <!--End row-->
+    </div>
+    <!--End container-->
+
+    <div class="row">
+    
+        <div class="col">
+           <div class="text-center">
+              <a href =  "{% url 'meals_list' %}" style = "background:#B5A46D;color:#fff; padding:6px;">Back to Meals</a>
+           </div>
+        </div>
+     </div>
+  
+ </section>
+
+
+{% endblock %}

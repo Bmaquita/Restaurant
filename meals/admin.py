@@ -4,4 +4,12 @@ from django.contrib import admin
 
 from .models import Category, Meal
 
-admin.site.register([Category, Meal])
+@admin.register(Meal)
+class MealAdmin(admin.ModelAdmin):
+
+     prepopulated_fields={
+        'slug':('name',)
+    }
+
+
+admin.site.register([Category])

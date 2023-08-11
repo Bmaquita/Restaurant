@@ -4,17 +4,19 @@ from django.db import models
 from django.utils.text import slugify 
 #meals models 
 
+from django.core.validators import MinValueValidator 
+
 class Meal(models.Model):
 
     name = models.CharField(max_length=200,unique=True)
     
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
 
-    price = models.DecimalField(decimal_places=2, max_digits=9999)
+    price = models.DecimalField(decimal_places=2, max_digits=9999, validators=[MinValueValidator(1)])
 
     on_special = models.BooleanField(default=False)
 
-    on_special_price = models.DecimalField(decimal_places=2, max_digits=9999)
+    on_special_price = models.DecimalField(decimal_places=2, max_digits=9999,blank=True, null=True, validators = [MinValueValidator(1)])
 
     feature_image = models.ImageField(upload_to='Meals/Feature-Image')
 
