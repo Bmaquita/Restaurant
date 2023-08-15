@@ -6,7 +6,7 @@ from .models import ContactDetail
 
 from django.core.mail import send_mail, BadHeaderError
 
-from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages 
 
 def contact(request):
 
@@ -34,6 +34,13 @@ def contact(request):
             from_email = f'{email} <{name}> | {phone}'
 
             send_mail(subject, message,from_email, ["dinomaquita@gmail.com"], fail_silently=False)
+
+            messages.success(request, "Thank you, we'll get back to you as soon as possible")
+
+            return redirect('contact')
+        
+        else:
+            messages.error("There was an issues found while submiting form")
             
         
     context = {
@@ -57,7 +64,12 @@ def reservation(request):
             
             reservation_form.save()
 
+            messages.success(request, "Thank you for booking we'll get back to you as soon as possible!")
+
             return redirect('index')
+        
+        else:
+            messages.success(request, "There was an error reserving you table")
 
     context = {
 
